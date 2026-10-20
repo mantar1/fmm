@@ -38,9 +38,9 @@ type Props = { adminMode?: boolean };
 export function ClanResourcePanel({ adminMode = false }: Props) {
   const [showAdmin, setShowAdmin] = useState(adminMode);
   const [name, setName] = useState('');
-  const [amounts, setAmounts] = useState<Record<string, string>>({
-    food: '', wood: '', stone: '', iron: '', gold: '',
-  });
+  const [amounts, setAmounts] = useState<Record<string, string>>(
+  Object.fromEntries(FIELDS.map((field) => [field.key, '']))
+);
   const [password, setPassword] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
   const [rows, setRows] = useState<ClanResourceSubmission[]>([]);
