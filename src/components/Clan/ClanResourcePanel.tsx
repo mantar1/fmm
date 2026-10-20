@@ -119,7 +119,23 @@ export function ClanResourcePanel({ adminMode = false }: Props) {
   if (showAdmin) {
     return (
       <section className="space-y-4 rounded-xl border border-white/10 p-4">
-        <h2 className="text-xl font-semibold">Klan Kaynak Yönetimi</h2>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+  <div className="flex flex-wrap items-center justify-between gap-2">
+  <h2 className="text-xl font-semibold">Klan Kaynak Yönetimi</h2>
+  <button
+    type="button"
+    onClick={() => {
+      setShowAdmin(false);
+      setLoggedIn(false);
+      setPassword('');
+      setRows([]);
+      setMessage('');
+    }}
+    className="rounded-lg border border-white/20 px-3 py-2 text-sm"
+  >
+    Üye ekranına dön
+  </button>
+</div>
         {!loggedIn ? (
           <form onSubmit={login} className="flex flex-wrap gap-2">
             <input
@@ -180,7 +196,19 @@ export function ClanResourcePanel({ adminMode = false }: Props) {
 
   return (
     <section className="space-y-4 rounded-xl border border-white/10 p-4">
-      <h2 className="text-xl font-semibold">Klan Kaynaklarını Gönder</h2>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+  <h2 className="text-xl font-semibold">Klan Kaynaklarını Gönder</h2>
+  <button
+    type="button"
+    onClick={() => {
+      setShowAdmin(true);
+      setMessage('');
+    }}
+    className="rounded-lg border border-white/20 px-3 py-2 text-sm"
+  >
+    Yönetici girişi
+  </button>
+</div>
       <p className="text-sm opacity-75">
         Gönderdiğin kayıt diğer üyeler tarafından görüntülenmez; yönetici panelinde listelenir.
       </p>
