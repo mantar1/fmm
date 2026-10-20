@@ -8,7 +8,7 @@ import {
 import { Card } from '../components/UI/Card';
 import { Button } from '../components/UI/Button';
 import { SpriteIcon } from '../components/UI/SpriteIcon';
-import { ResourcesEditor } from '../components/Profile/ResourcesEditor';
+import { ClanResourcePanel } from '../components/Clan/ClanResourcePanel';
 import { SectionSyncButton } from '../components/Profile/SectionSyncButton';
 import { ClanTabShell } from '../components/Clan/ClanTabShell';
 import { useProfile } from '../context/ProfileContext';
@@ -467,7 +467,12 @@ export default function Clan() {
             )}
 
             {/* ---- MY RESOURCES ---- */}
-            {tab === 'resources' && <ResourcesEditor />}
+            {tab === 'resources' && (
+    <div className="space-y-6">
+        <ResourcesEditor />
+        <ClanResourcePanel />
+    </div>
+)}
         </div>
     );
 }
