@@ -71,8 +71,9 @@ export function ClanResourcePanel({ adminMode = false }: Props) {
     try {
       await submitClanResources(name, resources);
       setMessage('Kaynakların gönderildi.');
-      setName('');
-      setAmounts({ food: '', wood: '', stone: '', iron: '', gold: '' });
+      setAmounts(
+  Object.fromEntries(FIELDS.map((field) => [field.key, '']))
+);
     } catch (error) {
       setMessage(error instanceof Error ? error.message : 'Gönderim başarısız.');
     } finally {
