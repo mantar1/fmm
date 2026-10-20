@@ -9,6 +9,7 @@ import { Card } from '../components/UI/Card';
 import { Button } from '../components/UI/Button';
 import { SpriteIcon } from '../components/UI/SpriteIcon';
 import { ClanResourcePanel } from '../components/Clan/ClanResourcePanel';
+import { ResourcesEditor } from '../components/Profile/ResourcesEditor';
 import { SectionSyncButton } from '../components/Profile/SectionSyncButton';
 import { ClanTabShell } from '../components/Clan/ClanTabShell';
 import { useProfile } from '../context/ProfileContext';
