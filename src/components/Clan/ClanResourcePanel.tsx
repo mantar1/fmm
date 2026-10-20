@@ -189,7 +189,9 @@ export function ClanResourcePanel({ adminMode = false }: Props) {
                 <dl className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3">
                   {Object.entries(row.resources).map(([key, value]) => (
                     <div key={key}>
-                      <dt className="text-sm opacity-70">{key}</dt>
+                      <dt className="text-sm opacity-70">
+  {FIELDS.find((field) => field.key === key)?.label ?? key}
+</dt>
                       <dd>{String(value)}</dd>
                     </div>
                   ))}
