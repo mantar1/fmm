@@ -24,7 +24,7 @@ export default function FAQ() {
                 if (Array.isArray(data)) {
                     // Merge with local stats
                     const merged = data.map(gh => {
-                        const stats = contributorsStats.find(s => 
+                        const stats = (contributorsStats as any[]).find((s: any) => 
                             (s.login && s.login.toLowerCase() === gh.login.toLowerCase()) ||
                             s.name.toLowerCase() === gh.login.toLowerCase() ||
                             gh.login.toLowerCase() === s.email?.split('@')[0].toLowerCase()
