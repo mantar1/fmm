@@ -19,6 +19,7 @@ const FIELDS = [
 type Props = { adminMode?: boolean };
 
 export function ClanResourcePanel({ adminMode = false }: Props) {
+  const [showAdmin, setShowAdmin] = useState(adminMode);
   const [name, setName] = useState('');
   const [amounts, setAmounts] = useState<Record<string, string>>({
     food: '', wood: '', stone: '', iron: '', gold: '',
@@ -35,7 +36,7 @@ export function ClanResourcePanel({ adminMode = false }: Props) {
   }, []);
 
   useEffect(() => {
-    if (!adminMode || !loggedIn) return;
+    if (!showAdmin || !loggedIn) return;
     let active = true;
     getClanResourceSubmissions(password)
       .then(result => { if (active) setRows(result); })
@@ -43,7 +44,7 @@ export function ClanResourcePanel({ adminMode = false }: Props) {
         if (active) setMessage(error instanceof Error ? error.message : 'Kayıtlar yüklenemedi.');
       });
     return () => { active = false; };
-  }, [adminMode, loggedIn, password]);
+  }, [showAdmin, loggedIn, password]);
 
   async function sendResources(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -115,7 +116,7 @@ export function ClanResourcePanel({ adminMode = false }: Props) {
     }
   }
 
-  if (adminMode) {
+  if (showAdmin) {
     return (
       <section className="space-y-4 rounded-xl border border-white/10 p-4">
         <h2 className="text-xl font-semibold">Klan Kaynak Yönetimi</h2>
