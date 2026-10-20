@@ -8,13 +8,30 @@ import {
   type ClanResourceSubmission,
 } from '../../services/clanResourceSubmissions';
 
+
 const FIELDS = [
-  { key: 'food', label: 'Yemek' },
-  { key: 'wood', label: 'Odun' },
-  { key: 'stone', label: 'Taş' },
-  { key: 'iron', label: 'Demir' },
-  { key: 'gold', label: 'Altın' },
+  { key: 'coins', label: 'Coins', group: 'Currencies' },
+  { key: 'gemCount', label: 'Gems', group: 'Currencies' },
+  { key: 'forgeCalculator.hammers', label: 'Hammers', group: 'Currencies' },
+  { key: 'skillCalculatorTickets', label: 'Skill Tickets', group: 'Currencies' },
+  { key: 'mountCalculatorWinders', label: 'Clock Winders', group: 'Currencies' },
+  { key: 'eggshellCount', label: 'Eggshells', group: 'Currencies' },
+  { key: 'techPotions', label: 'Tech Potions', group: 'Currencies' },
+  { key: 'guildPotions', label: 'Guild Potions', group: 'Currencies' },
+  { key: 'mountMergesReady', label: 'Mount Merges', group: 'Ready Merges' },
+  { key: 'petMergesReady', label: 'Pet Merges', group: 'Ready Merges' },
+  { key: 'ownedEggs.Common', label: 'Common Eggs', group: 'Eggs' },
+  { key: 'ownedEggs.Rare', label: 'Rare Eggs', group: 'Eggs' },
+  { key: 'ownedEggs.Epic', label: 'Epic Eggs', group: 'Eggs' },
+  { key: 'ownedEggs.Legendary', label: 'Legendary Eggs', group: 'Eggs' },
+  { key: 'ownedEggs.Ultimate', label: 'Ultimate Eggs', group: 'Eggs' },
+  { key: 'ownedEggs.Mythic', label: 'Mythic Eggs', group: 'Eggs' },
+  { key: 'dungeonKeyCounts.Hammer', label: 'Hammer Keys', group: 'Dungeon Keys' },
+  { key: 'dungeonKeyCounts.Skill', label: 'Skill Keys', group: 'Dungeon Keys' },
+  { key: 'dungeonKeyCounts.Egg', label: 'Egg Keys', group: 'Dungeon Keys' },
+  { key: 'dungeonKeyCounts.Potion', label: 'Potion Keys', group: 'Dungeon Keys' },
 ] as const;
+
 
 type Props = { adminMode?: boolean };
 
